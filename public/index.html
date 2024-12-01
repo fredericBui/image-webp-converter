@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur d'images en WebP</title>
+</head>
+<body>
+    <h1>Convertir une image en WebP</h1>
+    <form action="/convert" method="post" enctype="multipart/form-data">
+        <label for="image">Choisissez une image :</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Convertir</button>
+    </form>
+</body>
+</html>
