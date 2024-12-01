@@ -21,8 +21,8 @@ app.post('/convert', upload.single('image'), async (req, res) => {
             .webp({ quality: 80 })
             .toFile(outputPath);
 
-        // Téléchargement du fichier converti
-        res.download(outputPath, 'image-convertie.webp', (err) => {
+            // Téléchargement du fichier converti
+        res.download(outputPath, `${req.file.originalname.split('.').slice(0, -1).join('.')}.webp`, (err) => {
             // Suppression des fichiers temporaires après le téléchargement
             fs.unlink(filePath, () => {});
             fs.unlink(outputPath, () => {});
